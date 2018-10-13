@@ -36,9 +36,8 @@ class treeNode:
 
 
 def createTree(dataSet, minSup=1):  # create IT-tree from dataset but don't mine
-    start = set()
-    for items, trans in dataSet.items():  # first pass the dataset to get the transaction set
-        start = start.union(trans)
+    with open('first_node.pkl', 'rb') as file:
+        start = pickle.load(file)
     retTree = treeNode('Null Set', start, None)  # create tree
     eclat = []
     for items, trans in dataSet.items():  # seccond pass the dataset to get the transaction set
@@ -81,6 +80,7 @@ MINSUP = minSupcal(count)
 print(MINSUP)
 
 myTree = createTree(data,minSupcal(count))
+print('create tree in ' + str(time.time() - start))
 
 results = []
 def traverse(treeNode):
@@ -100,8 +100,10 @@ def mineTree(treeNode):
     with open('frequentItemsIT.json', 'w', encoding='utf8') as outfile:
         json.dump(jsondata, outfile, ensure_ascii=False)
         outfile.close()
+
 mineTree(myTree)
 
 print('done in ' + str(time.time() - start))
-#3867s
 
+#27s create tree
+#done in 30s
