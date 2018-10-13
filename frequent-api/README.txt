@@ -1,3 +1,5 @@
+The source code split the preprocess data with the tree generation to dataconverter.py
+
 go to this link to download fullBDS.json
 
 https://1drv.ms/u/s!An1UosdcVaRLiFUjYAyme71KiZRD
