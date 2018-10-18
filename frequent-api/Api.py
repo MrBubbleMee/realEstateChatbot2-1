@@ -39,7 +39,7 @@ def convertion(list):
 def analyze_query():
     b = []
     oviousSet = ['mua:transaction_type', 'bán:transaction_type', 'tp . hcm:addr_city']
-    with open('frequentItems.json', 'r', encoding='utf8') as f:
+    with open('frequentItemsFP.json', 'r', encoding='utf8') as f:
         frequent = json.load(f)
         for i, val in frequent.items():
             for j in val:
