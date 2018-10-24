@@ -87,8 +87,9 @@ def firstNode():
 
 
 convertFP(dataRaw) #unblock to convert data to FP input data
-convertIT(dataRaw) #unblock to convert data to IT input data
-firstNode()
+#firstNode()
+#convertIT(dataRaw) #unblock to convert data to IT input data
+
 
 
 print('done in ' + str(time.time() - start))
